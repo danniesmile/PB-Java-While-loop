@@ -1,0 +1,30 @@
+package loops;
+
+import java.util.Scanner;
+
+public class NumberSequence {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+        int maxNum = Integer.MIN_VALUE; // -2147483648
+        int minNum = Integer.MAX_VALUE; // 2147483647
+
+        while (!"END".equals(input)) {
+            int number = Integer.parseInt(input);
+
+            if (maxNum < number) {
+                maxNum = number;
+
+            }
+            if (minNum > number) {
+                minNum = number;
+            }
+
+            input = scanner.nextLine();
+
+        }
+        System.out.printf("Max number: %d%n", maxNum);
+        System.out.printf("Min number: %d", minNum);
+    }
+}

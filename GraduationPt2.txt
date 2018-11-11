@@ -1,0 +1,32 @@
+package loops;
+
+import java.util.Scanner;
+
+public class GraduationPt2 {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String name = scanner.nextLine();
+        int counter = 1;
+        int exclusion = 0;
+        double sum = 0;
+
+        while (counter <= 12 && exclusion < 2) {
+            double grade = Double.parseDouble(scanner.nextLine());
+
+            if (grade >= 4.00) {
+                sum += grade;
+                counter++;
+            } else {
+                exclusion++;
+            }
+        }
+        if (exclusion < 2) {
+            double average = sum / 12;
+            System.out.printf("%s graduated. Average grade: %.2f", name, average);
+        } else {
+            System.out.println(name + " has been excluded at " + counter + " grade");
+        }
+    }
+}
